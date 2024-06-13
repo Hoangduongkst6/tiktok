@@ -1,0 +1,137 @@
+.wrapper {
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-top-spcaer: 9px;
+
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+}
+
+.inner {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    min-width: 300px;
+}
+
+.form,
+.form-result {
+    width: 500px;
+}
+
+.form {
+    height: var(--search-height);
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    border: 1px solid transparent;
+    position: relative;
+
+    &:hover {
+        border-color: #babbbf;
+    }
+
+    input {
+        width: 100%;
+        line-height: 21px;
+        color: #161823;
+        caret-color: var(--primary-color);
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: calc(var(--search-height) - var(--search-top-spcaer) * 2);
+        right: 52px;
+        top: var(--search-top-spcaer);
+        background: rgba(22, 24, 35, 0.12);
+    }
+}
+
+input:not(:placeholder-shown) ~ .search img {
+    opacity: 1;
+}
+
+.search {
+    padding: 8px 16px 9px 12px;
+    margin: -12px -16px -12px 0px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e4e4e6;
+        border-top-right-radius: var(--search-border-radius);
+        border-bottom-right-radius: var(--search-border-radius);
+    }
+
+    &:hover > img {
+        opacity: 1;
+    }
+
+    img {
+        opacity: 0.34;
+        filter: brightness(0) saturate(100%) invert(0%) sepia(90%) saturate(7462%) hue-rotate(358deg) brightness(103%)
+            contrast(108%);
+    }
+}
+
+.clear img,
+.loading {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 52px;
+    margin: 0px 12px;
+    filter: brightness(0) saturate(100%) invert(76%) sepia(9%) saturate(94%) hue-rotate(201deg) brightness(88%)
+        contrast(84%);
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    margin-right: 9px;
+}
+
+.btn-upload {
+    min-width: 110px;
+    border-color: #ddddde;
+    color: #161823;
+    border-radius: 2px;
+
+    &:hover {
+        border-color: #ddddde;
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    img {
+        margin-right: 8px;
+    }
+}
+
+.ellipsis {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+
+    img {
+        width: 100%;
+    }
+}
+
+.cta {
+    color: #fff;
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
+    }
+}
