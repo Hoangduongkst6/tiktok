@@ -23,4 +23,30 @@
         width: 20px;
         height: 20px;
     }
+
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
+}
+
+// Header
+.header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: -8px;
+
+    &-icon {
+        width: 20px;
+        height: 20px;
+        margin-left: 28px;
+    }
+
+    &-title {
+        position: absolute;
+        font-weight: 600;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }

@@ -117,6 +117,61 @@ input:not(:placeholder-shown) ~ .search img {
     }
 }
 
+// currntUser
+.message,
+.inbox,
+.avatar {
+    cursor: pointer;
+}
+
+.message {
+    margin-left: 24px;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.inbox {
+    margin-left: 16px;
+    position: relative;
+
+    &::before {
+        content: "12";
+        position: absolute;
+        min-width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        color: #fff;
+        background-color: var(--primary-color);
+        font-weight: 600;
+        font-size: 14px;
+        padding: 0px 6px;
+        top: -6px;
+        left: 16px;
+    }
+
+    img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.avatar {
+    margin-left: 24px;
+
+    img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+}
+
+// Not User
 .ellipsis {
     width: 20px;
     height: 20px;
@@ -125,13 +180,5 @@ input:not(:placeholder-shown) ~ .search img {
 
     img {
         width: 100%;
-    }
-}
-
-.cta {
-    color: #fff;
-
-    &:hover {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), rgb(254, 44, 85);
     }
 }
