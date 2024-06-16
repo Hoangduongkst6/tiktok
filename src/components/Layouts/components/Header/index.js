@@ -2,15 +2,13 @@ import { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react/";
-import HeadlessTippy from "@tippyjs/react/headless";
 import "tippy.js/dist/tippy.css";
 
 import Button from "~/components/Button";
-import { Wrapper as PopperWrapper } from "~/components/Popper";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
-import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
+import Search from "../Search";
 
 const cx = classNames.bind(styles);
 
@@ -54,14 +52,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
-
     // Handle logic
     const handleMenuChange = (menuItem) => {
         console.log(menuItem);
@@ -100,43 +90,8 @@ function Header() {
                         <img src={images.logo} alt="Tiktok" />
                     </Link>
 
-                    <div>
-                        <HeadlessTippy
-                            interactive
-                            visible={searchResult.length > 0}
-                            render={(attrs) => (
-                                <div
-                                    className={cx("form-result")}
-                                    tabIndex="-1"
-                                    {...attrs}
-                                    data-placement="button"
-                                    data-escaped={false}
-                                >
-                                    <PopperWrapper>
-                                        <h4>Account</h4>
-                                        <AccountItem />
-                                        <AccountItem />
-                                        <AccountItem />
-                                        <AccountItem />
-                                        <AccountItem />
-                                        <AccountItem />
-                                    </PopperWrapper>
-                                </div>
-                            )}
-                        >
-                            <form className={cx("form")}>
-                                <input type="text" placeholder="Search" spellCheck={false} />
-                                <button className={cx("clear")}>
-                                    <img src={images.close} alt="close" />
-                                </button>
-                                <img className={cx("loading")} src={images.loading} alt="loading" />
-
-                                <button className={cx("search")}>
-                                    <img src={images.search} alt="Search" />
-                                </button>
-                            </form>
-                        </HeadlessTippy>
-                    </div>
+                    {/* Search */}
+                    <Search />
 
                     <div className={cx("action")}>
                         <Button outline className={cx("btn-upload")}>
