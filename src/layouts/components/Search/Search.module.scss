@@ -3,6 +3,10 @@
     width: 500px;
 }
 
+.scrollable {
+    overflow-y: auto;
+}
+
 .form {
     height: var(--search-height);
     display: flex;
@@ -20,6 +24,7 @@
     input {
         width: 100%;
         line-height: 21px;
+        padding-right: 40px;
         color: #161823;
         caret-color: var(--primary-color);
         font-size: 1.6rem;

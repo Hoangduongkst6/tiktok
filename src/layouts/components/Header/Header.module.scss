@@ -3,11 +3,17 @@
     --search-height: 46px;
     --search-top-spcaer: 9px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    background-color: #fff;
 }
 
 .inner {
-    height: 60px;
+    height: var(--default-layout-header-height);
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -5,6 +5,10 @@
     }
 }
 
+.scrollable {
+    overflow-y: auto;
+}
+
 // Menu Item
 .menu-item {
     width: 100%;
@@ -34,6 +38,7 @@
     height: 50px;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     position: relative;
     margin-top: -8px;
 

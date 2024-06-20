@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react/";
 import "tippy.js/dist/tippy.css";
 
+import config from "~/config";
 import Button from "~/components/Button";
 import styles from "./Header.module.scss";
 import images from "~/assets/images";
@@ -54,7 +54,7 @@ const MENU_ITEMS = [
 function Header() {
     // Handle logic
     const handleMenuChange = (menuItem) => {
-        console.log(menuItem);
+        // ...
     };
 
     const currentUser = true;
@@ -72,7 +72,7 @@ function Header() {
         {
             icon: images.setting,
             title: "Settings",
-            to: "setting",
+            to: "/setting",
         },
         ...MENU_ITEMS,
         {
@@ -86,7 +86,7 @@ function Header() {
         <header className={cx("wrapper")}>
             <div className="container-fluid">
                 <div className={cx("inner")}>
-                    <Link to="/" className={cx("logo")}>
+                    <Link to={config.routes.home} className={cx("logo")}>
                         <img src={images.logo} alt="Tiktok" />
                     </Link>
 
